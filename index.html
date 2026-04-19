@@ -3,154 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meo Shop - Thế Giới Mèo Cưng</title>
+    <title>Meo Shop - Thế Giới Mèo Hư Hỏng</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-blue-300">
+<body class="bg-slate-50 text-slate-800">
 
-    <nav class="bg-blue-950 shadow-lg p-10">
+    <nav class="bg-blue-950 shadow-md sticky top-0 z-50 p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-3xl font-extrabold text-blue-500">🐱 SHOPMEODUMI</h1>
-            <ul class="flex space-x-6 text-blue-300">
-                <li><a href="#" class="text-2xl hover:text-blue-500">Trang Chủ</a></li>
-                <li><a href="product.html" class="text-2xl hover:text-blue-500">Sản Phẩm</a></li>
-                <li><a href="https://zalo.me/0865229462" target="_blank" class="text-2xl hover:text-blue-500">Liên Hệ</a></li>
+            <h1 class="text-2xl font-extrabold text-blue-400">🐱 SHOPMEODUMI</h1>
+            <ul class="hidden md:flex space-x-8 text-white font-semibold">
+                <li><a href="#hero" class="hover:text-blue-400 transition">Trang Chủ</a></li>
+                <li><a href="#problem" class="hover:text-blue-400 transition">Tại Sao?</a></li>
+                <li><a href="#products" class="hover:text-blue-400 transition">Danh Sách Mèo</a></li>
+                <li><a href="#faq" class="hover:text-blue-400 transition">Hỏi Đáp</a></li>
             </ul>
+            <a href="https://zalo.me/0865229462" class="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition">Liên Hệ</a>
         </div>
     </nav>
 
-    <header class="container mx-auto mt-10 p-10 bg-blue-200 rounded-3xl flex flex-col items-center text-center">
-        <h2 class="text-6xl font-extrabold text-blue-400 mb-4">Những Chú Mèo Hư Hỏng</h2>
-        <p class="text-4xl text-blue-400 mb-6">Chuyên review các giống mèo quậy, ăn nhiều, lười.</p>
-    </header>
-
-    <main class="container mx-auto my-12 px-4">
-        <h3 class="text-3xl font-bold text-blue-800 mb-8 italic drop-shadow-md">Các Bé Mèo Đang Gọi Vốn:</h3>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
-                <img src="imagescat/su-su.jpg" alt="Mèo béo" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h4 class="font-bold text-xl text-blue-500 mb-2">Mèo Su Su</h4>
-                    <p class="text-blue-600 text-sm mb-4">màu mướp, thích ăn gà luộc, gà sấy và ngủ cùng bà.</p>
-                    <div class="flex justify-between items-center">
-                      <a href="detail-su.html" target="_blank" class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm inline-block hover:bg-blue-800 transition">
-                Xem chi tiết
-                      </a>
-                    </div>
+    <header id="hero" class="relative bg-blue-100 py-20 overflow-hidden">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center relative z-10">
+            <div class="md:w-1/2 text-center md:text-left">
+                <h2 class="text-5xl md:text-7xl font-extrabold text-blue-900 leading-tight mb-6">
+                    Đừng Nuôi Mèo Nếu Bạn Sợ... <span class="text-blue-500 italic">Bị Quậy!</span>
+                </h2>
+                <p class="text-xl text-slate-600 mb-8">Nơi hội tụ những "ông chủ" bốn chân lười biếng, tham ăn và quậy phá nhất hệ mặt trời.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#products" class="bg-blue-600 text-white px-10 py-4 rounded-xl text-lg font-bold shadow-xl hover:bg-blue-700 transition">Khám Phá Ngay</a>
+                    <a href="#problem" class="bg-white text-blue-600 border-2 border-blue-600 px-10 py-4 rounded-xl text-lg font-bold hover:bg-blue-50 transition">Tại sao là mèo hư?</a>
                 </div>
             </div>
-
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
-                <img src="imagescat/mieu-mieu.jpg" alt="Mèo gái" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h4 class="font-bold text-xl text-blue-500 mb-2">Mèo Miêu Miêu</h4>
-                    <p class="text-bule-600 text-sm mb-4">màu mướp, nhát, thích được gải đít.</p>
-                    <div class="flex justify-between items-center">
-                         <a href="detail-mieu.html" target="_blank" class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm inline-block hover:bg-blue-800 transition">
-                Xem chi tiết
-                      </a>
+            <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center">
+                <div class="relative">
+                    <div class="absolute -top-10 -left-10 w-40 h-40 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+                    <img src="imagescat/su-su.jpg" alt="Hero Cat" class="rounded-3xl shadow-2xl w-80 h-80 object-cover border-8 border-white">
                 </div>
             </div>
         </div>
+    </header>
 
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
-                <img src="imagescat/trang-trang.jpg" alt="Mèo trắng" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h4 class="font-bold text-xl text-blue-500 mb-2">Mèo Trắng Trắng</h4>
-                    <p class="text-blue-600 text-sm mb-4">màu trắng, dữ, thích quánh lộn, thích ở với ông.</p>
-                    <div class="flex justify-between items-center">   
-                         <a href="detail-trang.html" target="_blank" class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm inline-block hover:bg-blue-800 transition">
-                Xem chi tiết
-                      </a>
-                    </div>
+    <section id="problem" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h3 class="text-blue-600 font-bold uppercase tracking-widest mb-2">Vấn đề của bạn</h3>
+                <h2 class="text-4xl font-bold mb-4">Bạn thích mèo nhưng sợ cô đơn?</h2>
+                <p class="text-lg text-slate-500">Mèo ngoan thì chán, mèo sang thì khó gần. Tại ShopMeoDumi, chúng tôi cung cấp giải pháp: Những bé mèo "hư hỏng" nhưng đầy tình cảm, đảm bảo nhà bạn không bao giờ yên tĩnh!</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="text-center p-8 rounded-2xl bg-blue-50">
+                    <div class="text-4xl mb-4">🍗</div>
+                    <h4 class="font-bold text-xl mb-2">Ăn Như Hạm</h4>
+                    <p>Giúp bạn giải quyết nỗi lo... thừa đồ ăn trong tủ lạnh.</p>
+                </div>
+                <div class="text-center p-8 rounded-2xl bg-blue-50">
+                    <div class="text-4xl mb-4">💤</div>
+                    <h4 class="font-bold text-xl mb-2">Lười Chảy Thây</h4>
+                    <p>Người bạn đồng hành lý tưởng cho những giấc ngủ nướng.</p>
+                </div>
+                <div class="text-center p-8 rounded-2xl bg-blue-50">
+                    <div class="text-4xl mb-4">🥊</div>
+                    <h4 class="font-bold text-xl mb-2">Hay Quậy Phá</h4>
+                    <p>Đảm bảo rèn luyện tính kiên nhẫn và kỹ năng dọn dẹp cho bạn.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
-                <img src="imagescat/quay-quay.jpg" alt="Mèo sọc" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h4 class="font-bold text-xl text-blue-500 mb-2">Mèo Quậy Quậy</h4>
-                    <p class="text-blue-600 text-sm mb-4">màu xám sọc, ngoan, thích ngủ với ba mẹ, ghiền đồ sấy.</p>
-                    <div class="flex justify-between items-center">                     
-                         <a href="detail-quay.html" target="_blank" class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm inline-block hover:bg-blue-800 transition">
-                Xem chi tiết
-                      </a>
+    <section class="bg-blue-900 py-12 text-white">
+        <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="text-4xl font-bold">500+</div>
+                <div class="text-blue-300">Bé mèo tìm nhà</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold">100%</div>
+                <div class="text-blue-300">Độ quậy phá</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold">2T+</div>
+                <div class="text-blue-300">Tiền gà sấy/tháng</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold">99%</div>
+                <div class="text-blue-300">Sen hài lòng</div>
+            </div>
+        </div>
+    </section>
+
+    <main id="products" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center mb-12">Danh Sách Các Bé Đang "Gọi Vốn"</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition overflow-hidden border border-slate-200">
+                    <img src="imagescat/su-su.jpg" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <span class="bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded">VIP QUẬY</span>
+                        <h4 class="font-bold text-2xl mt-2">Mèo Su Su</h4>
+                        <p class="text-slate-500 my-4 italic">"Nghiện gà luộc, ngủ cùng bà, chuyên gia chiếm giường."</p>
+                        <a href="detail-su.html" class="block text-center bg-slate-900 text-white py-3 rounded-xl font-bold hover:bg-blue-600 transition">Xem Chi Tiết</a>
                     </div>
                 </div>
-            </div>
-
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
-                <img src="imagescat/chua-chua.jpg" alt="Mèo lười" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h4 class="font-bold text-xl text-blue-500 mb-2">Mèo Công Chúa</h4>
-                    <p class="text-blue-600 text-sm mb-4">màu cà phê sữa, nhỏ con, hung dữ, cà nanh nhiều.</p>
-                    <div class="flex justify-between items-center">
-                         <a href="detail-chua.html" target="_blank" class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm inline-block hover:bg-blue-800 transition">
-                Xem chi tiết
-                      </a>
-                    </div>
                 </div>
-            </div>
-
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
-                <img src="imagescat/xu-xu.jpg" alt="Mèo Hư Hỏng" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h4 class="font-bold text-xl text-blue-500 mb-2">Mèo Xù Xù</h4>
-                    <p class="text-blue-600 text-sm mb-4">màu trắng có đóm đen, ngoan, gì cũng ăn.</p>
-                    <div class="flex justify-between items-center">
-                         <a href="detail-xu.html" target="_blank" class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm inline-block hover:bg-blue-800 transition">
-                Xem chi tiết
-                      </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
-                <img src="imagescat/sang-sang.jpg" alt="Mèo Đáng Yêu" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h4 class="font-bold text-xl text-blue-500 mb-2">Mèo Sáng Sáng</h4>
-                    <p class="text-blue-600 text-sm mb-4">màu vàng đen, siêu ngoan, siêu đẹp trai.</p>
-                    <div class="flex justify-between items-center">
-                        <a href="detail-sang.html" target="_blank" class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm inline-block hover:bg-blue-800 transition">
-                            Xem chi tiết
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
-                <img src="imagescat/gau-gau.jpg" alt="Mèo Gâu Gâu" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h4 class="font-bold text-xl text-blue-500 mb-2">Mèo Gấu Gấu</h4>
-                    <p class="text-blue-600 text-sm mb-4">màu bạc, đẹp trai, thông minh, rất quậy.</p>
-                    <div class="flex justify-between items-center">
-                        <a href="detail-gau.html" target="_blank" class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm inline-block hover:bg-blue-800 transition">
-                            Xem chi tiết
-                        </a>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
-                <img src="imagescat/gon-gon.jpg" alt="Mèo Gọn Gọn" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h4 class="font-bold text-xl text-blue-500 mb-2">Mèo Gold Gold</h4>
-                    <p class="text-blue-600 text-sm mb-4">màu vàng, dễ thương, nhút nhát, thích ngủ.</p>
-                    <div class="flex justify-between items-center">
-                        <a href="detail-gon.html" target="_blank" class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm inline-block hover:bg-blue-800 transition">
-                            Xem chi tiết
-                        </a>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </main>
 
-    <footer class="bg-gray-800 text-white py-8 text-center">
-        <p>© 2026 MeoShop by DUMI. Bản quyền thuộc về hội yêu mèo.</p>
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-12">Gói Ưu Đãi Cho "Con Sen" Mới</h2>
+            <div class="max-w-md mx-auto p-8 rounded-3xl border-4 border-blue-500 bg-blue-50 shadow-2xl relative">
+                <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue-500 text-white px-6 py-1 rounded-full text-sm font-bold">HOT DEAL</div>
+                <h4 class="text-2xl font-bold mb-4">Combo Đón Bé</h4>
+                <div class="text-5xl font-extrabold mb-6">0 VNĐ*</div>
+                <ul class="text-left space-y-4 mb-8">
+                    <li class="flex items-center">✅ Tặng 1kg Gà Sấy thượng hạng</li>
+                    <li class="flex items-center">✅ Cẩm nang "Sống sót khi mèo quậy"</li>
+                    <li class="flex items-center">✅ Voucher giảm giá cát vệ sinh trọn đời</li>
+                </ul>
+                <p class="text-xs text-slate-400 mb-6">(*) Chỉ áp dụng cho các Sen có đủ kiên nhẫn.</p>
+                <a href="https://zalo.me/0865229462" class="block w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-xl hover:scale-105 transition">Đăng Ký Đón Bé</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl font-bold text-center mb-12">Câu Hỏi Thường Gặp</h2>
+            <div class="space-y-4">
+                <details class="bg-white p-6 rounded-xl shadow-sm cursor-pointer group">
+                    <summary class="font-bold text-lg list-none flex justify-between items-center">
+                        Mèo ở đây có thực sự hư không?
+                        <span class="group-open:rotate-180 transition">▼</span>
+                    </summary>
+                    <p class="mt-4 text-slate-600">Chúng tôi cam kết 100% các bé đều có ít nhất 1 tật xấu như: ngủ ngáy, hay dỗi hoặc ăn vụng.</p>
+                </details>
+                <details class="bg-white p-6 rounded-xl shadow-sm cursor-pointer group">
+                    <summary class="font-bold text-lg list-none flex justify-between items-center">
+                        Tôi có được trả hàng không?
+                        <span class="group-open:rotate-180 transition">▼</span>
+                    </summary>
+                    <p class="mt-4 text-slate-600">Khi đã dính vào "ngải mèo" của DUMI, bạn sẽ không bao giờ muốn rời xa đâu!</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-blue-950 text-white py-12 border-t border-blue-900">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-8 md:mb-0">
+                <h2 class="text-2xl font-bold text-blue-400 mb-2">SHOPMEODUMI</h2>
+                <p class="text-slate-400">Kết nối những tâm hồn yêu mèo quậy phá.</p>
+            </div>
+            <div class="flex space-x-6 text-2xl mb-8 md:mb-0">
+                <a href="#" class="hover:text-blue-400">FB</a>
+                <a href="#" class="hover:text-blue-400">TikTok</a>
+                <a href="#" class="hover:text-blue-400">Zalo</a>
+            </div>
+            <p class="text-slate-500 text-sm">© 2026 MeoShop by DUMI. Powered by Maximum.</p>
+        </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
