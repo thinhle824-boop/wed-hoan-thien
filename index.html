@@ -3,112 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meo Shop - Đỉnh Cao Mèo Quậy</title>
+    <title>Meow & Co - Chăm Sóc Mèo Yêu</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ff8da1', // Màu hồng san hô mềm mại
+                        secondary: '#ffd1dc',
+                        dark: '#4a4a4a',
+                    },
+                    fontFamily: {
+                        sans: ['Nunito', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-blue-50">
+<body class="bg-[#fffcf9] text-dark font-sans relative overflow-x-hidden">
 
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 p-6">
-        <div class="container mx-auto flex justify-between items-center glass-card px-8 py-4 shadow-sm">
-            <h1 class="text-2xl font-black text-blue-600 tracking-tighter">MEODUMI.</h1>
-            <div class="hidden md:flex space-x-8 font-bold text-slate-600">
-                <a href="#hero" class="hover:text-blue-500 transition">Trang Chủ</a>
-                <a href="#benefits" class="hover:text-blue-500 transition">Lợi Ích</a>
-                <a href="#products" class="hover:text-blue-500 transition">Bộ Sưu Tập</a>
-                <a href="#reviews" class="hover:text-blue-500 transition">Đánh Giá</a>
-            </div>
-            <a href="https://zalo.me/..." class="bg-blue-600 text-white px-6 py-2 rounded-full font-bold btn-glow transition">Đón Bé Ngay</a>
+    <div id="scroll-paws-container" class="absolute inset-0 pointer-events-none z-0"></div>
+
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden opacity-5 z-0">
+        <i class="fa-solid fa-paw absolute top-20 left-10 text-6xl transform -rotate-12"></i>
+        <i class="fa-solid fa-paw absolute top-60 right-20 text-8xl transform rotate-45"></i>
+        <i class="fa-solid fa-paw absolute top-[40rem] left-1/4 text-5xl transform rotate-12"></i>
+    </div>
+
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center relative z-10">
+        <div class="text-2xl font-extrabold text-primary flex items-center gap-2 cursor-paw">
+            <i class="fa-solid fa-cat"></i> Meow&Co.
         </div>
+        <div class="hidden md:flex gap-8 font-semibold">
+            <a href="#services" class="hover:text-primary transition cursor-paw">Dịch vụ</a>
+            <a href="#gallery" class="hover:text-primary transition cursor-paw">Thư viện</a>
+            <a href="#testimonials" class="hover:text-primary transition cursor-paw">Đánh giá</a>
+        </div>
+        <button class="bg-primary text-white px-6 py-2 rounded-full font-bold shadow-tint hover:-translate-y-1 transition transform cursor-paw">
+            Đặt lịch ngay
+        </button>
     </nav>
 
-    <section id="hero" class="pt-32 pb-20 px-6">
-        <div class="container mx-auto flex flex-col lg:flex-row items-center">
-            <div class="lg:w-1/2 text-center lg:text-left">
-                <span class="bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest">Cộng đồng yêu mèo quậy lớn nhất VN</span>
-                <h2 class="text-5xl lg:text-7xl font-black text-slate-900 mt-6 leading-tight">
-                    Sở Hữu "Nỗi Phiền Toái" <br>
-                    <span class="text-blue-600">Đáng Yêu Nhất</span>
-                </h2>
-                <p class="text-xl text-slate-500 mt-6 mb-10 max-w-lg mx-auto lg:mx-0">
-                    Chúng tôi không bán mèo, chúng tôi trao bạn một người bạn đồng hành đầy cá tính (và cũng đầy rắc rối).
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <button class="bg-slate-900 text-white px-10 py-4 rounded-2xl text-lg font-bold hover:bg-blue-600 transition shadow-2xl">Xem Danh Sách Mèo</button>
-                    <div class="flex items-center gap-3 px-4">
-                        <div class="flex -space-x-3">
-                            <div class="w-10 h-10 rounded-full bg-red-400 border-2 border-white"></div>
-                            <div class="w-10 h-10 rounded-full bg-blue-400 border-2 border-white"></div>
-                            <div class="w-10 h-10 rounded-full bg-green-400 border-2 border-white"></div>
-                        </div>
-                        <span class="text-sm font-bold text-slate-600">2,000+ Sen đã sập bẫy</span>
-                    </div>
-                </div>
+    <header class="container mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12 relative z-10">
+        <div class="w-full md:w-1/2 flex flex-col items-start text-center md:text-left">
+            <div class="inline-block bg-secondary text-primary px-4 py-1 rounded-full text-sm font-bold mb-4 organic-shape-small">
+                #1 Dịch vụ chăm sóc mèo
             </div>
-            <div class="lg:w-1/2 mt-16 lg:mt-0 relative">
-                <div class="float-animation">
-                    <img src="imagescat/quay-quay.jpg" alt="Mèo đại diện" class="w-full max-w-lg mx-auto drop-shadow-2xl">
-                </div>
-                <div class="absolute top-10 right-10 bg-white p-4 rounded-2xl shadow-xl rotate-12 hidden md:block">
-                    <p class="text-xs font-bold text-slate-400">Độ quậy phá</p>
-                    <p class="text-xl font-black text-red-500">99.9% 🔥</p>
-                </div>
-            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 text-dark">
+                Trao Yêu Thương, <br> Nhận Tiếng <span class="text-primary">Purr~</span>
+            </h1>
+            <p class="text-lg text-gray-600 mb-8 max-w-md mx-auto md:mx-0">
+                Chúng tôi mang đến trải nghiệm tuyệt vời nhất cho "hoàng thượng" của bạn. Từ làm đẹp, khám sức khỏe đến khách sạn 5 sao.
+            </p>
+            <button class="bg-primary text-white text-lg px-8 py-4 rounded-full font-bold shadow-tint flex items-center gap-3 hover:-translate-y-1 transition transform cursor-paw mx-auto md:mx-0">
+                <i class="fa-solid fa-paw text-xl"></i> Khám phá ngay
+            </button>
         </div>
-    </section>
-
-    <section class="py-10 border-y border-slate-200 bg-white">
-        <div class="container mx-auto px-6 flex flex-wrap justify-center gap-12 opacity-50 grayscale">
-            <span class="text-2xl font-bold">Royal Canin</span>
-            <span class="text-2xl font-bold">Me-O</span>
-            <span class="text-2xl font-bold">Whiskas</span>
-            <span class="text-2xl font-bold">Pate King</span>
+        <div class="w-full md:w-1/2 flex justify-center relative">
+            <div class="absolute inset-0 bg-secondary organic-shape scale-105 z-0 transform translate-x-4 translate-y-4"></div>
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80" alt="Mèo đáng yêu nhìn thẳng" class="organic-shape w-4/5 max-w-md relative z-10 cat-hover shadow-lg">
         </div>
-    </section>
+    </header>
 
-    <section id="benefits" class="py-24">
+    <section class="bg-white py-10 relative z-10 border-y border-gray-100">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-black mb-16 italic">"Đặc Quyền" Khi Trở Thành Sen</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-10 glass-card hover:bg-blue-600 group transition duration-500">
-                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-white transition">🏥</div>
-                    <h4 class="text-2xl font-bold mb-4 group-hover:text-white">Bảo Hành Sức Khỏe</h4>
-                    <p class="text-slate-500 group-hover:text-blue-100 font-medium">Cam kết các bé đã được tiêm phòng đầy đủ và "có chứng chỉ" quậy phá chuyên nghiệp.</p>
-                </div>
-                </div>
-        </div>
-    </section>
-
-    <section id="reviews" class="py-24 bg-slate-900 text-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-black text-center mb-16">Sen Nói Gì Về Chúng Tôi?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700">
-                    <p class="italic text-lg text-slate-300 mb-6">"Từ khi rước Su Su về, nhà tôi không còn cái rèm cửa nào lành lặn, nhưng bù lại bà nội tôi vui vẻ hẳn lên vì có đứa ngủ cùng."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-blue-500"></div>
-                        <div>
-                            <p class="font-bold">Anh Tuấn</p>
-                            <p class="text-sm text-blue-400">Đã nuôi Su Su 6 tháng</p>
-                        </div>
-                    </div>
-                </div>
-                </div>
-        </div>
-    </section>
-
-    <section class="py-24">
-        <div class="container mx-auto px-6">
-            <div class="bg-blue-600 rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden">
-                <div class="relative z-10">
-                    <h2 class="text-4xl md:text-6xl font-black mb-8 italic">Sẵn Sàng Để Bị "Hành Hạ" Chưa?</h2>
-                    <p class="text-xl mb-10 opacity-90 font-medium">Đừng để những bé mèo này phải đợi lâu thêm nữa!</p>
-                    <a href="https://zalo.me/..." class="bg-white text-blue-600 px-12 py-5 rounded-2xl text-2xl font-black hover:scale-110 transition inline-block shadow-2xl">LIÊN HỆ ĐÓN BÉ NGAY</a>
-                </div>
-                <div class="absolute -bottom-20 -right-20 text-[20rem] opacity-10 rotate-12 font-black">CAT</div>
+            <p class="text-gray-400 font-semibold mb-6">ĐỐI TÁC CỦA CÁC THƯƠNG HIỆU HÀNG ĐẦU</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <div class="flex items-center gap-2 text-2xl font-bold"><i class="fa-solid fa-fish text-primary"></i> Royal Canin</div>
+                <div class="flex items-center gap-2 text-2xl font-bold"><i class="fa-solid fa-leaf text-green-500"></i> Whiskas</div>
+                <div class="flex items-center gap-2 text-2xl font-bold"><i class="fa-solid fa-shield-cat text-blue-500"></i> Me-O</div>
+                <div class="flex items-center gap-2 text-2xl font-bold"><i class="fa-solid fa-bone text-yellow-500"></i> NutriSource</div>
             </div>
         </div>
     </section>
+
+    <section id="services" class="container mx-auto px-6 py-24 relative z-10">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Dịch Vụ Nổi Bật</h2>
+            <p class="text-gray-500 max-w-2xl mx-auto">Mọi thứ "hoàng thượng" cần để luôn khỏe mạnh và xinh đẹp.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="bg-white p-8 rounded-[3rem] shadow-tint transition transform hover:-translate-y-2 cursor-paw group">
+                <div class="w-16 h-16 bg-secondary text-primary rounded-full flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                    <i class="fa-solid fa-scissors"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-3">Spa & Làm đẹp</h3>
+                <p class="text-gray-600">Tắm gội massage, cắt tỉa lông thời trang giúp bé mèo luôn thơm tho và lộng lẫy.</p>
+            </div>
+            <div class="bg-white p-8 rounded-[3rem] shadow-tint transition transform hover:-translate-y-2 cursor-paw group">
+                <div class="w-16 h-16 bg-secondary text-primary rounded-full flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                    <i class="fa-solid fa-stethoscope"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-3">Khám Sức Khỏe</h3>
+                <p class="text-gray-600">Đội ngũ bác sĩ thú y tận tâm, trang thiết bị hiện đại đảm bảo sức khỏe toàn diện.</p>
+            </div>
+            <div class="bg-white p-8 rounded-[3rem] shadow-tint transition transform hover:-translate-y-2 cursor-paw group">
+                <div class="w-16 h-16 bg-secondary text-primary rounded-full flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                    <i class="fa-solid fa-bed"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-3">Cat Hotel 5 Sao</h3>
+                <p class="text-gray-600">Môi trường lưu chuồng an toàn, có điều hòa và đồ chơi riêng biệt khi bạn đi vắng.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="bg-secondary py-24 relative z-10">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-16">Khách Hàng Đáng Yêu</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?auto=format&fit=crop&w=500&q=80" alt="Mèo 1" class="w-full h-64 object-cover rounded-[2rem] cat-hover">
+                <img src="https://images.unsplash.com/photo-1529778459816-3a18ffece4fa?auto=format&fit=crop&w=500&q=80" alt="Mèo 2" class="w-full h-64 object-cover rounded-[2rem] cat-hover mt-8">
+                <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=500&q=80" alt="Mèo 3" class="w-full h-64 object-cover rounded-[2rem] cat-hover">
+                <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=500&q=80" alt="Mèo 4" class="w-full h-64 object-cover rounded-[2rem] cat-hover mt-8">
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="container mx-auto px-6 py-24 relative z-10">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Lời Tiếng Từ "Con Sen"</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-[3rem] shadow-tint relative">
+                <i class="fa-solid fa-quote-left text-4xl text-secondary absolute top-6 right-8 opacity-50"></i>
+                <p class="text-gray-600 mb-6 italic z-10 relative">"Từ ngày mang Miu Miu đến đây tỉa lông, bé ngoan hẳn và lông mọc lại rất đẹp. Nhân viên siêu nhẹ nhàng với mèo luôn!"</p>
+                <div class="flex items-center gap-4">
+                    <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=100&q=80" alt="Avatar Mèo" class="w-14 h-14 rounded-full object-cover border-2 border-primary">
+                    <div>
+                        <h4 class="font-bold">Miu Miu</h4>
+                        <p class="text-sm text-gray-500">của Sen Thu Hà</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-[3rem] shadow-tint relative">
+                <i class="fa-solid fa-quote-left text-4xl text-secondary absolute top-6 right-8 opacity-50"></i>
+                <p class="text-gray-600 mb-6 italic z-10 relative">"Mình gửi Béo ở hotel lúc đi công tác. Ngày nào các bạn cũng quay clip gửi cho mình xem, yên tâm tuyệt đối!"</p>
+                <div class="flex items-center gap-4">
+                    <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=100&q=80" alt="Avatar Mèo" class="w-14 h-14 rounded-full object-cover border-2 border-primary">
+                    <div>
+                        <h4 class="font-bold">Mập Béo</h4>
+                        <p class="text-sm text-gray-500">của Sen Minh Khang</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-[3rem] shadow-tint relative hidden lg:block">
+                <i class="fa-solid fa-quote-left text-4xl text-secondary absolute top-6 right-8 opacity-50"></i>
+                <p class="text-gray-600 mb-6 italic z-10 relative">"Phòng khám sạch sẽ, bác sĩ mát tay. Bé nhà mình tới tiêm phòng mà không hề quậy phá. Vote 5 sao!"</p>
+                <div class="flex items-center gap-4">
+                    <img src="https://images.unsplash.com/photo-1513245543132-31f507417b26?auto=format&fit=crop&w=100&q=80" alt="Avatar Mèo" class="w-14 h-14 rounded-full object-cover border-2 border-primary">
+                    <div>
+                        <h4 class="font-bold">Luna</h4>
+                        <p class="text-sm text-gray-500">của Sen Thảo Vy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-6 py-12 max-w-3xl relative z-10 mb-16">
+        <h2 class="text-3xl font-extrabold text-center mb-10">Câu Hỏi Thường Gặp</h2>
+        <div class="space-y-4">
+            <details class="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 cursor-pointer">
+                <summary class="flex justify-between items-center font-bold text-lg list-none">
+                    Dịch vụ tắm gội mất bao lâu?
+                    <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                </summary>
+                <p class="text-gray-600 mt-4 leading-relaxed">
+                    Thông thường một liệu trình tắm, sấy, vệ sinh tai và cắt móng mất khoảng 45 - 60 phút tùy vào độ dày của lông và tính cách của bé.
+                </p>
+            </details>
+            <details class="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 cursor-pointer">
+                <summary class="flex justify-between items-center font-bold text-lg list-none">
+                    Giá lưu chuồng (Cat Hotel) tính như thế nào?
+                    <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                </summary>
+                <p class="text-gray-600 mt-4 leading-relaxed">
+                    Giá khởi điểm từ 150.000 VNĐ/ngày bao gồm hạt cơ bản, vệ sinh khay cát 2 lần/ngày. Bạn có thể mang theo thức ăn riêng nếu bé có chế độ đặc biệt.
+                </p>
+            </details>
+            <details class="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 cursor-pointer">
+                <summary class="flex justify-between items-center font-bold text-lg list-none">
+                    Tôi có cần đặt lịch trước không?
+                    <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                </summary>
+                <p class="text-gray-600 mt-4 leading-relaxed">
+                    Để đảm bảo không phải chờ đợi và chúng tôi có thể phục vụ bé tốt nhất, bạn nên đặt lịch trước ít nhất 1 buổi qua số Hotline hoặc Website.
+                </p>
+            </details>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-12 relative z-10 rounded-t-[4rem]">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <div class="text-2xl font-extrabold text-primary flex items-center gap-2 mb-4">
+                    <i class="fa-solid fa-cat"></i> Meow&Co.
+                </div>
+                <p class="text-gray-400 mb-4">Nơi tình yêu thương dành cho loài mèo được thể hiện qua từng hành động nhỏ nhất.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition cursor-paw"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition cursor-paw"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition cursor-paw"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-4">Liên Hệ</h4>
+                <p class="text-gray-400 mb-2"><i class="fa-solid fa-location-dot mr-2"></i> 123 Đường Mèo Vạc, Quận 1, TP.HCM</p>
+                <p class="text-gray-400 mb-2"><i class="fa-solid fa-phone mr-2"></i> 0987.654.321</p>
+                <p class="text-gray-400"><i class="fa-solid fa-envelope mr-2"></i> hello@meowco.vn</p>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-4">Giờ Mở Cửa</h4>
+                <p class="text-gray-400 mb-2">Thứ 2 - Thứ 6: 08:00 - 20:00</p>
+                <p class="text-gray-400 mb-2">Thứ 7 - CN: 09:00 - 18:00</p>
+            </div>
+        </div>
+        <div class="text-center text-gray-500 mt-12 pt-8 border-t border-gray-700">
+            &copy; 2026 Meow&Co. All rights reserved.
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
