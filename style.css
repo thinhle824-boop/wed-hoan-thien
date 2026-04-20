@@ -1,31 +1,46 @@
-/* Tùy chỉnh font chữ cho thân thiện */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+:root {
+    --primary-blue: #3b82f6;
+    --dark-blue: #1e3a8a;
+}
+
 body {
     font-family: 'Quicksand', sans-serif;
-}
-
-/* Hiệu ứng chuyển động cho Hero section */
-@keyframes blob {
-    0% { transform: translate(0px, 0px) scale(1); }
-    33% { transform: translate(30px, -50px) scale(1.1); }
-    66% { transform: translate(-20px, 20px) scale(0.9); }
-    100% { transform: translate(0px, 0px) scale(1); }
-}
-
-.animate-blob {
-    animation: blob 7s infinite;
-}
-
-/* Làm mượt chuyển động khi Hover Card */
-.cat-card {
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-/* Smooth Scroll */
-html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
-/* Custom details/summary */
-details summary::-webkit-details-marker {
-    display: none;
+/* Hiệu ứng Glassmorphism cho Card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 24px;
+}
+
+/* Hiệu ứng di chuột cho ảnh mèo */
+.cat-img-container img {
+    transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.cat-card:hover img {
+    transform: scale(1.1) rotate(2deg);
+}
+
+/* Nút bấm hiệu ứng Glow */
+.btn-glow:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Animation cho Hero Section */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.float-animation {
+    animation: float 4s ease-in-out infinite;
 }

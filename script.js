@@ -1,13 +1,30 @@
-// Hiệu ứng khi scroll trang
+// Thay đổi Navbar khi cuộn trang
 window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 50) {
-        nav.classList.add('py-2', 'bg-opacity-95');
-        nav.classList.remove('p-4');
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 100) {
+        nav.classList.remove('p-6');
+        nav.classList.add('p-2');
     } else {
-        nav.classList.add('p-4');
-        nav.classList.remove('py-2');
+        nav.classList.add('p-6');
+        nav.classList.remove('p-2');
     }
 });
 
-// Bạn có thể thêm logic đếm số (Counter) cho phần Social Proof ở đây nếu muốn sống động hơn
+// Hiệu ứng Reveal (Hiện dần khi cuộn chuột)
+const observerOptions = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            entry.target.classList.remove('opacity-0', 'translate-y-10');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('section').forEach(section => {
+    section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+    observer.observe(section);
+});
