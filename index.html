@@ -15,24 +15,31 @@
 </head>
 <body class="bg-blue-50 text-slate-800">
 
-    <nav class="sticky top-0 z-50 bg-blue-950/90 backdrop-blur-md shadow-lg p-4">
-        <div class="container mx-auto flex justify-between items-center px-4 py-3">
-    <h1 class="text-2xl font-extrabold text-blue-400 tracking-tighter">🐱 SHOPMEODUMI</h1>
+<nav class="sticky top-0 z-50 bg-blue-950/90 backdrop-blur-md shadow-lg p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-extrabold text-blue-400 tracking-tighter">🐱 SHOPMEODUMI</h1>
 
-    <button id="menu-btn" class="block md:hidden text-blue-400 focus:outline-none">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-    </button>
+        <ul class="hidden md:flex space-x-8 text-blue-100 font-medium items-center">
+            <li><a href="#" class="hover:text-blue-400 transition">Trang Chủ</a></li>
+            <li><a href="#services" class="hover:text-blue-400 transition">Dịch Vụ</a></li>
+            <li><a href="#cats" class="hover:text-blue-400 transition">Đội Ngũ "Hư Hỏng"</a></li>
+            <li><a href="https://zalo.me/0865229462" class="bg-blue-500 px-5 py-2 rounded-full hover:bg-blue-600 transition">Liên Hệ Ngay</a></li>
+        </ul>
 
-    <ul id="menu" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out absolute top-16 left-0 w-full bg-slate-900 flex-col items-center space-y-4 py-6 md:static md:flex md:flex-row md:w-auto md:bg-transparent md:space-y-0 md:space-x-8 text-blue-100 font-medium">
-        <li><a href="#" class="hover:text-blue-400 transition">Trang Chủ</a></li>
-        <li><a href="#services" class="hover:text-blue-400 transition">Dịch Vụ</a></li>
-        <li><a href="#cats" class="hover:text-blue-400 transition">Đội Ngũ "Hư Hỏng"</a></li>
-        <li><a href="https://zalo.me/0865229462" class="bg-blue-500 px-5 py-2 rounded-full hover:bg-blue-600 transition">Liên Hệ Ngay</a></li>
-    </ul>
-</div>
-    </nav>
+        <button id="menu-btn" class="block md:hidden focus:outline-none z-50 cursor-pointer">
+            <div class="w-6 h-0.5 bg-blue-100 mb-1.5 transition-all duration-300 bar1"></div>
+            <div class="w-6 h-0.5 bg-blue-100 mb-1.5 transition-all duration-300 bar2"></div>
+            <div class="w-6 h-0.5 bg-blue-100 transition-all duration-300 bar3"></div>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-blue-950 translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col items-center justify-center space-y-8 text-xl text-blue-100">
+        <a href="#" class="mobile-link hover:text-blue-400 transition">Trang Chủ</a>
+        <a href="#services" class="mobile-link hover:text-blue-400 transition">Dịch Vụ</a>
+        <a href="#cats" class="mobile-link hover:text-blue-400 transition">Đội Ngũ "Hư Hỏng"</a>
+        <a href="https://zalo.me/0865229462" class="bg-blue-500 px-8 py-3 rounded-full hover:bg-blue-600 transition">Liên Hệ Ngay</a>
+    </div>
+</nav>
 
     <header class="relative bg-blue-200 py-20 overflow-hidden">
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center relative z-10">
@@ -278,15 +285,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 </script>
+
 <script>
-    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('menu');
+const btn = document.getElementById('menu-btn');
+const menu = document.getElementById('mobile-menu');
+const links = document.querySelectorAll('.mobile-link');
 
-    btn.addEventListener('click', () => {
-        menu.classList.toggle('max-h-0');
-        menu.classList.toggle('max-h-screen');
+btn.addEventListener('click', () => {
+    // Toggle Menu Slide (Hiệu ứng trượt)
+    menu.classList.toggle('translate-x-full');
+    menu.classList.toggle('translate-x-0');
+
+    // Hiệu ứng con trỏ nút (X animation)
+    btn.querySelector('.bar1').classList.toggle('rotate-45');
+    btn.querySelector('.bar1').classList.toggle('translate-y-[8px]');
+    btn.querySelector('.bar2').classList.toggle('opacity-0');
+    btn.querySelector('.bar3').classList.toggle('-rotate-45');
+    btn.querySelector('.bar3').classList.toggle('-translate-y-[8px]');
+});
+
+// Tự động đóng menu khi click vào một link
+links.forEach(link => {
+    link.addEventListener('click', () => {
+        menu.classList.add('translate-x-full');
+        // Reset nút con trỏ về ban đầu
+        btn.querySelector('.bar1').classList.remove('rotate-45', 'translate-y-[8px]');
+        btn.querySelector('.bar2').classList.remove('opacity-0');
+        btn.querySelector('.bar3').classList.remove('-rotate-45', '-translate-y-[8px]');
     });
+});
 </script>
-
 </body>
 </html>
