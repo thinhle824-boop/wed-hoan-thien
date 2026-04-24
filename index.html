@@ -25,7 +25,7 @@
         </svg>
     </button>
 
-    <ul id="menu" class="hidden absolute top-16 left-0 w-full bg-slate-900 flex-col items-center space-y-4 py-6 md:static md:flex md:flex-row md:w-auto md:bg-transparent md:space-y-0 md:space-x-8 text-blue-100 font-medium">
+    <ul id="menu" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out absolute top-16 left-0 w-full bg-slate-900 flex-col items-center space-y-4 py-6 md:static md:flex md:flex-row md:w-auto md:bg-transparent md:space-y-0 md:space-x-8 text-blue-100 font-medium">
         <li><a href="#" class="hover:text-blue-400 transition">Trang Chủ</a></li>
         <li><a href="#services" class="hover:text-blue-400 transition">Dịch Vụ</a></li>
         <li><a href="#cats" class="hover:text-blue-400 transition">Đội Ngũ "Hư Hỏng"</a></li>
@@ -283,8 +283,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const menu = document.getElementById('menu');
 
     btn.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-        menu.classList.toggle('flex');
+        menu.classList.toggle('max-h-0');
+        menu.classList.toggle('max-h-screen');
     });
 </script>
 
